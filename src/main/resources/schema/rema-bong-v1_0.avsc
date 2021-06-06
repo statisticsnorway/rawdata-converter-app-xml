@@ -1,0 +1,736 @@
+{
+  "type": "record",
+  "name": "root",
+  "fields": [
+    {
+      "name": "MajorVersion",
+      "type": [
+        "null",
+        "string"
+      ],
+      "default": null
+    },
+    {
+      "name": "MinorVersion",
+      "type": [
+        "null",
+        "string"
+      ],
+      "default": null
+    },
+    {
+      "name": "FixVersion",
+      "type": [
+        "null",
+        "string"
+      ],
+      "default": null
+    },
+    {
+      "name": "Transaction",
+      "type": {
+        "type": "record",
+        "name": "TransactionSchema",
+        "fields": [
+          {
+            "name": "TrainingModeFlag",
+            "type": [
+              "null",
+              "string"
+            ],
+            "default": null
+          },
+          {
+            "name": "PosType",
+            "type": [
+              "null",
+              "string"
+            ],
+            "default": null
+          },
+          {
+            "name": "Origin",
+            "type": [
+              "null",
+              "string"
+            ],
+            "default": null
+          },
+          {
+            "name": "Version",
+            "type": [
+              "null",
+              "string"
+            ],
+            "default": null
+          },
+          {
+            "name": "ZeroSales",
+            "type": [
+              "null",
+              "string"
+            ],
+            "default": null
+          },
+          {
+            "name": "BusinessUnit",
+            "type": {
+              "type": "record",
+              "name": "BusinessUnitSchema",
+              "fields": [
+                {
+                  "name": "UnitID",
+                  "type": {
+                    "type": "record",
+                    "name": "UnitIDSchema",
+                    "fields": [
+                      {
+                        "name": "GLN",
+                        "type": [
+                          "null",
+                          "string"
+                        ],
+                        "default": null
+                      },
+                      {
+                        "name": "value",
+                        "type": [
+                          "null",
+                          "string"
+                        ],
+                        "default": null
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "name": "WorkstationID",
+            "type": {
+              "type": "record",
+              "name": "WorkstationIDSchema",
+              "fields": [
+                {
+                  "name": "Mode",
+                  "type": [
+                    "null",
+                    "string"
+                  ],
+                  "default": null
+                },
+                {
+                  "name": "TypeCode",
+                  "type": [
+                    "null",
+                    "string"
+                  ],
+                  "default": null
+                },
+                {
+                  "name": "WorkstationLocation",
+                  "type": [
+                    "null",
+                    "string"
+                  ],
+                  "default": null
+                },
+                {
+                  "name": "value",
+                  "type": [
+                    "null",
+                    "string"
+                  ],
+                  "default": null
+                }
+              ]
+            }
+          },
+          {
+            "name": "SequenceNumber",
+            "type": [
+              "null",
+              "string"
+            ],
+            "default": null
+          },
+          {
+            "name": "TransactionID",
+            "type": [
+              "null",
+              "string"
+            ],
+            "default": null
+          },
+          {
+            "name": "CurrencyCode",
+            "type": [
+              "null",
+              "string"
+            ],
+            "default": null
+          },
+          {
+            "name": "RetailTransaction",
+            "type": {
+              "type": "record",
+              "name": "RetailTransactionSchema",
+              "fields": [
+                {
+                  "name": "TransactionStatus",
+                  "type": [
+                    "null",
+                    "string"
+                  ],
+                  "default": null
+                },
+                {
+                  "name": "LineItem",
+                  "default": null,
+                  "type": [
+                    "null",
+                    {
+                      "type": "record",
+                      "name": "LineItemSchema",
+                      "fields": [
+                        {
+                          "name": "EntryMethod",
+                          "type": [
+                            "null",
+                            "string"
+                          ],
+                          "default": null
+                        },
+                        {
+                          "name": "CancelFlag",
+                          "type": [
+                            "null",
+                            "string"
+                          ],
+                          "default": null
+                        },
+                        {
+                          "name": "CancelType",
+                          "type": [
+                            "null",
+                            "string"
+                          ],
+                          "default": null
+                        },
+                        {
+                          "name": "Tender",
+                          "default": null,
+                          "type": [
+                            "null",
+                            {
+                              "type": "record",
+                              "name": "TenderSchema",
+                              "fields": [
+                                {
+                                  "name": "TenderType",
+                                  "type": [
+                                    "null",
+                                    "string"
+                                  ],
+                                  "default": null
+                                },
+                                {
+                                  "name": "TypeCode",
+                                  "type": [
+                                    "null",
+                                    "string"
+                                  ],
+                                  "default": null
+                                },
+                                {
+                                  "name": "InternalTenderId",
+                                  "type": [
+                                    "null",
+                                    "string"
+                                  ],
+                                  "default": null
+                                },
+                                {
+                                  "name": "Amount",
+                                  "type": [
+                                    "null",
+                                    "string"
+                                  ],
+                                  "default": null
+                                },
+                                {
+                                  "name": "Rounding",
+                                  "default": null,
+                                  "type": [
+                                    "null",
+                                    {
+                                      "type": "record",
+                                      "name": "RoundingSchema",
+                                      "fields": [
+                                        {
+                                          "name": "RoundingDirection",
+                                          "type": [
+                                            "null",
+                                            "string"
+                                          ],
+                                          "default": null
+                                        },
+                                        {
+                                          "name": "value",
+                                          "type": [
+                                            "null",
+                                            "string"
+                                          ],
+                                          "default": null
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "name": "Sale",
+                          "default": null,
+                          "type": [
+                            "null",
+                            {
+                              "type": "record",
+                              "name": "SaleSchema",
+                              "fields": [
+                                {
+                                  "name": "ItemType",
+                                  "type": [
+                                    "null",
+                                    "string"
+                                  ],
+                                  "default": null
+                                },
+                                {
+                                  "name": "ItemSubType",
+                                  "default": null,
+                                  "type": [
+                                    "null",
+                                    "string"
+                                  ],
+                                  "default": null
+                                },
+                                {
+                                  "name": "ScanningItem",
+                                  "type": [
+                                    "null",
+                                    "string"
+                                  ],
+                                  "default": null
+                                },
+                                {
+                                  "name": "ItemProperty",
+                                  "default": null,
+                                  "type": [
+                                    "null",
+                                    "string"
+                                  ],
+                                  "default": null
+                                },
+                                {
+                                  "name": "ActionType",
+                                  "type": [
+                                    "null",
+                                    "string"
+                                  ],
+                                  "default": null
+                                },
+                                {
+                                  "name": "POSIdentity",
+                                  "default": null,
+                                  "type": [
+                                    "null",
+                                    {
+                                      "type": "record",
+                                      "name": "POSIdentitySchema",
+                                      "fields": [
+                                        {
+                                          "name": "POSIDType",
+                                          "type": [
+                                            "null",
+                                            "string"
+                                          ],
+                                          "default": null
+                                        },
+                                        {
+                                          "name": "POSItemID",
+                                          "type": [
+                                            "null",
+                                            "string"
+                                          ],
+                                          "default": null
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "type": "array",
+                                      "items": "POSIdentitySchema"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "name": "MerchandiseHierarchy",
+                                  "default": null,
+                                  "type": [
+                                    "null",
+                                    {
+                                      "type": "record",
+                                      "name": "MerchandiseHierarchySchema",
+                                      "fields": [
+                                        {
+                                          "name": "Level",
+                                          "type": [
+                                            "null",
+                                            "string"
+                                          ],
+                                          "default": null
+                                        },
+                                        {
+                                          "name": "value",
+                                          "type": [
+                                            "null",
+                                            "string"
+                                          ],
+                                          "default": null
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "type": "array",
+                                      "items": "MerchandiseHierarchySchema"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "name": "Description",
+                                  "default": null,
+                                  "type": [
+                                    "null",
+                                    {
+                                      "type": "record",
+                                      "name": "DescriptionSchema",
+                                      "fields": [
+                                        {
+                                          "name": "TypeCode",
+                                          "type": [
+                                            "null",
+                                            "string"
+                                          ],
+                                          "default": null
+                                        },
+                                        {
+                                          "name": "value",
+                                          "type": [
+                                            "null",
+                                            "string"
+                                          ],
+                                          "default": null
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "type": "array",
+                                      "items": "DescriptionSchema"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "name": "UnitCostPrice",
+                                  "default": null,
+                                  "type": [
+                                    "null",
+                                    "string"
+                                  ],
+                                  "default": null
+                                },
+                                {
+                                  "name": "SuggestedPrice",
+                                  "default": null,
+                                  "type": [
+                                    "null",
+                                    "string"
+                                  ],
+                                  "default": null
+                                },
+                                {
+                                  "name": "ExtendedAmount",
+                                  "default": null,
+                                  "type": [
+                                    "null",
+                                    "string"
+                                  ],
+                                  "default": null
+                                },
+                                {
+                                  "name": "Quantity",
+                                  "default": null,
+                                  "type": {
+                                    "type": "record",
+                                    "name": "QuantitySchema",
+                                    "fields": [
+                                      {
+                                        "name": "Units",
+                                        "type": [
+                                          "null",
+                                          "string"
+                                        ],
+                                        "default": null
+                                      },
+                                      {
+                                        "name": "UnitOfMeasureCode",
+                                        "type": [
+                                          "null",
+                                          "string"
+                                        ],
+                                        "default": null
+                                      },
+                                      {
+                                        "name": "value",
+                                        "type": [
+                                          "null",
+                                          "string"
+                                        ],
+                                        "default": null
+                                      }
+                                    ]
+                                  }
+                                },
+                                {
+                                  "name": "Tax",
+                                  "default": null,
+                                  "type": [
+                                    "null",
+                                    {
+                                      "type": "record",
+                                      "name": "TaxSchema",
+                                      "fields": [
+                                        {
+                                          "name": "TaxSubType",
+                                          "type": [
+                                            "null",
+                                            "string"
+                                          ],
+                                          "default": null
+                                        },
+                                        {
+                                          "name": "Amount",
+                                          "type": [
+                                            "null",
+                                            "string"
+                                          ],
+                                          "default": null
+                                        },
+                                        {
+                                          "name": "Percent",
+                                          "type": [
+                                            "null",
+                                            "string"
+                                          ],
+                                          "default": null
+                                        },
+                                        {
+                                          "name": "TaxGroupID",
+                                          "default": null,
+                                          "type": {
+                                            "type": "record",
+                                            "name": "TaxGroupIDSchema",
+                                            "fields": [
+                                              {
+                                                "name": "ArticleGroupCode",
+                                                "type": [
+                                                  "null",
+                                                  "string"
+                                                ],
+                                                "default": null
+                                              },
+                                              {
+                                                "name": "value",
+                                                "type": [
+                                                  "null",
+                                                  "string"
+                                                ],
+                                                "default": null
+                                              }
+                                            ]
+                                          }
+                                        },
+                                        {
+                                          "name": "RecyclingAmount",
+                                          "default": null,
+                                          "type": [
+                                            "null",
+                                            "string"
+                                          ],
+                                          "default": null
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "name": "SequenceNumber",
+                          "type": [
+                            "null",
+                            "string"
+                          ],
+                          "default": null
+                        },
+                        {
+                          "name": "DateTime",
+                          "type": [
+                            "null",
+                            "string"
+                          ],
+                          "default": null
+                        }
+                      ]
+                    },
+                    {
+                      "type": "array",
+                      "items": "LineItemSchema"
+                    }
+                  ]
+                },
+                {
+                  "name": "Total",
+                  "default": null,
+                  "type": [
+                    "null",
+                    {
+                      "type": "record",
+                      "name": "TotalSchema",
+                      "fields": [
+                        {
+                          "name": "TotalType",
+                          "type": [
+                            "null",
+                            "string"
+                          ],
+                          "default": null
+                        },
+                        {
+                          "name": "CurrencyCode",
+                          "type": [
+                            "null",
+                            "string"
+                          ],
+                          "default": null
+                        },
+                        {
+                          "name": "value",
+                          "type": [
+                            "null",
+                            "string"
+                          ],
+                          "default": null
+                        }
+                      ]
+                    },
+                    {
+                      "type": "array",
+                      "items": "TotalSchema"
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "name": "BeginDateTime",
+            "type": [
+              "null",
+              "string"
+            ],
+            "default": null
+          },
+          {
+            "name": "EndDateTime",
+            "type": [
+              "null",
+              "string"
+            ],
+            "default": null
+          },
+          {
+            "name": "OperatorBypassApproval",
+            "default": null,
+            "type": [
+              "null",
+              {
+                "type": "record",
+                "name": "OperatorBypassApprovalSchema",
+                "fields": [
+                  {
+                    "name": "SequenceNumber",
+                    "type": [
+                      "null",
+                      "string"
+                    ],
+                    "default": null
+                  },
+                  {
+                    "name": "ApproverID",
+                    "type": {
+                      "type": "record",
+                      "name": "ApproverIDSchema",
+                      "fields": [
+                        {
+                          "name": "AssociateID",
+                          "type": [
+                            "null",
+                            "string"
+                          ],
+                          "default": null
+                        },
+                        {
+                          "name": "value",
+                          "type": [
+                            "null",
+                            "string"
+                          ],
+                          "default": null
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "name": "LineApprovalCode",
+                    "type": [
+                      "null",
+                      "string"
+                    ],
+                    "default": null
+                  },
+                  {
+                    "name": "ApprovalDateTime",
+                    "type": [
+                      "null",
+                      "string"
+                    ],
+                    "default": null
+                  }
+                ]
+              },
+              {
+                "type": "array",
+                "items": "OperatorBypassApprovalSchema"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

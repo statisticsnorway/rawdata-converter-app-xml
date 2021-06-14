@@ -6,6 +6,7 @@ import no.ssb.avro.convert.json.JsonSettings;
 import no.ssb.avro.convert.json.ToGenericRecord;
 import no.ssb.rawdata.api.RawdataMessage;
 import no.ssb.rawdata.converter.app.xml.schema.SchemaAdapter;
+import no.ssb.rawdata.converter.app.xml.schema.SchemaDescriptor;
 import no.ssb.rawdata.converter.app.xml.schema.Schemas;
 import no.ssb.rawdata.converter.core.convert.ConversionResult;
 import no.ssb.rawdata.converter.core.convert.ConversionResult.ConversionResultBuilder;
@@ -112,26 +113,30 @@ public class XmlRawdataConverter implements RawdataConverter {
 
     @Override
     public boolean isConvertible(RawdataMessage rawdataMessage) {
-/*
-        String xml = new String(rawdataMessage.get("entry"));
 
-        if (xml.contains("ReceiptNumber") && xml.contains("RetailTransaction")) {
-            return true;
+        // TODO: See how these checks can be made more generic
+        for (SchemaDescriptor schemaDescriptor : converterConfig.getDataElements()) {
+
+            // Only convert rema bongs that contain certain textual strings
+            // other elements will fail since the schema does not support them
+            if (schemaDescriptor.getSchemaName().startsWith("rema-bong")) {
+                String xml = new String(rawdataMessage.get("data"));
+                if (xml.contains("RetailTransaction") && xml.contains("POSIdentity") && xml.contains("GTIN")) {
+                    return true;
+                }
+                else {
+                    log.info("Skipping non-receipt REMA data at " + posAndIdOf(rawdataMessage));
+                    return false;
+                }
+            }
         }
-        else {
-            log.info("Skipping non-receipt REMA data at " + posAndIdOf(rawdataMessage));
-            return false;
-        }
-*/
+
         return true;
     }
 
     @Override
     public ConversionResult convert(RawdataMessage rawdataMessage) {
         ConversionResultBuilder resultBuilder = ConversionResult.builder(targetAvroSchema, rawdataMessage);
-
-        RawdataMessageAdapter.print(rawdataMessage); // TODO: Remove this ;-)
-
         addManifest(rawdataMessage, resultBuilder);
 
         dataSchemas.forEach(schema -> {
@@ -174,7 +179,7 @@ public class XmlRawdataConverter implements RawdataConverter {
         }
         catch (Exception e) {
             RawdataMessageAdapter.print(rawdataMessage);
-            throw new XmlRawdataConverterException("Error converting xml " + schemaAdapter.getRawdataItemName() + " data at " + posAndIdOf(rawdataMessage), e);
+            throw new XmlRawdataConverterException("Error converting xml '" + schemaAdapter.getRawdataItemName() + "' element at " + posAndIdOf(rawdataMessage), e);
         }
     }
 

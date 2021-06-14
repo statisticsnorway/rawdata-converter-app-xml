@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<POSLog xmlns="http://www.nrf-arts.org/IXRetail/namespace/" xmlns:VRArtsPoslogExt="http://schemas.vismaretail.com/poslog/" MajorVersion="6" MinorVersion="0" FixVersion="0">
+  <Transaction TrainingModeFlag="false" VRArtsPoslogExt:PosType="SuperPOS" VRArtsPoslogExt:Origin="SuperPOS" VRArtsPoslogExt:Version="16.1.1.342" VRArtsPoslogExt:ZeroSales="true">
+    <BusinessUnit>
+      <UnitID VRArtsPoslogExt:GLN="7080001385651">1234</UnitID>
+    </BusinessUnit>
+    <WorkstationID Mode="Retail" TypeCode="POS" WorkstationLocation="0">2</WorkstationID>
+    <SequenceNumber>9999996</SequenceNumber>
+    <TransactionID>1802220000175200032002962000</TransactionID>
+    <CurrencyCode>NOK</CurrencyCode>
+    <BeginDateTime>2098-02-22T00:00:32.420+01:00</BeginDateTime>
+    <EndDateTime>2098-02-22T00:00:32.620+01:00</EndDateTime>
+  </Transaction>
+</POSLog>

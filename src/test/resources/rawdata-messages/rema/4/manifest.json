@@ -1,0 +1,18 @@
+[ {
+  "metadata" : {
+    "topic" : "blah/rema1000/PosLogs/2018/02/20210613214439",
+    "position" : "4",
+    "resource-type" : "entry",
+    "content-key" : "data",
+    "charset" : "UTF-8",
+    "content-length" : 899,
+    "content-type" : "application/xml",
+    "created-date" : "2021-06-13T21:44:42.840206422Z"
+  },
+  "schema" : {
+    "source-path" : "blah/rema1000/PosLogs/2018/.content/02.zip/1623619949627/02/22",
+    "source-file" : "20180222_000032620-175202-9999996",
+    "record-type" : "single",
+    "fields" : [ ]
+  }
+} ]
